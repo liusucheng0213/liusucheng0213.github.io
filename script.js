@@ -69,9 +69,10 @@ if (imageDialog && imageDialogImage && imageDialogTitle && imageDialogOriginal &
 }
 
 const navLinks = document.querySelectorAll("[data-nav]");
-const sections = ["home", "about", "projects", "demos", "honors", "contact"]
+const sections = ["home", "about", "projects", "architecture", "demos", "honors", "copyright", "contact"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
+const navSectionAliases = { demos: "projects", copyright: "honors" };
 
 const setActiveSection = (id) => {
   navLinks.forEach((link) => {
@@ -89,7 +90,7 @@ if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setActiveSection(entry.target.id === "demos" ? "projects" : entry.target.id);
+        setActiveSection(navSectionAliases[entry.target.id] || entry.target.id);
       }
     });
   }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });

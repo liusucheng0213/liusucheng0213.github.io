@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#151515">
   <title>刘苏城 Sucheng Liu — AI · Full-stack · Product</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261030">
-  <script src="script.js?v=20261030" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261030-2">
+  <script src="script.js?v=20261030-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -22,6 +22,7 @@
       <a href="#home" data-nav="home">首页</a>
       <a href="#about" data-nav="about">关于</a>
       <a href="#projects" data-nav="projects">项目</a>
+      <a href="#architecture" data-nav="architecture">架构</a>
       <a href="#honors" data-nav="honors">经历</a>
       <a href="#contact" data-nav="contact">联系</a>
     </nav>
@@ -163,9 +164,61 @@
       </div>
     </section>
 
+    <section class="section architecture" id="architecture" aria-labelledby="architecture-title">
+      <div class="projects-heading" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="section-number">03</span>SYSTEM ARCHITECTURE</p>
+          <h2 id="architecture-title">从界面往后，<br>看看系统如何协作。</h2>
+        </div>
+        <p>项目不仅是页面上看得到的功能，也包括交互、业务、模型与数据之间的配合。这里展开两项目的整体架构，点击图片可查看细节。</p>
+      </div>
+      <div class="architecture-list">
+        <article class="architecture-card" id="architecture-lingjing" data-reveal>
+          <header>
+            <div><span class="architecture-kicker">SYSTEM 01 / SMART TOURISM</span><h3>灵境智游 · 四层分层解耦架构</h3></div>
+            <p>把双端体验、业务编排、AI 能力与数据存储分开组织，让导览服务既能统一调度，也方便独立扩展。</p>
+          </header>
+          <figure>
+            <a class="architecture-image" href="assets/lingjing-architecture.webp" data-lightbox data-title="灵境智游 · 系统总体架构" data-alt="灵境智游四层系统架构：交互展现层、业务编排层、AI 能力层与数据存储层">
+              <img src="assets/lingjing-architecture.webp" alt="灵境智游系统总体架构图，展示四个层级及双端、业务引擎、模型与数据库的组成" width="2000" height="1125" loading="lazy" decoding="async">
+            </a>
+            <figcaption>
+              <ol class="architecture-layers">
+                <li><span>01</span><strong>交互展现层</strong><p>游客端 React PWA 与管理端 React SPA，覆盖游览体验与后台运营。</p></li>
+                <li><span>02</span><strong>业务编排层</strong><p>统一连接对话、情感、RAG、数字人、路线、故事与管理接口。</p></li>
+                <li><span>03</span><strong>AI 能力层</strong><p>组合 BGE-M3、DeepSeek、讯飞语音与视觉模型，提供多模态能力。</p></li>
+                <li><span>04</span><strong>数据存储层</strong><p>PostgreSQL 与 pgvector 管理业务及向量数据，Redis 提供缓存支持。</p></li>
+              </ol>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="architecture-card" id="architecture-interview" data-reveal>
+          <header>
+            <div><span class="architecture-kicker">SYSTEM 02 / AI INTERVIEW</span><h3>AI Interview · 从知识处理到成长反馈</h3></div>
+            <p>以 RAG 检索增强为核心，将岗位与简历知识、面试交互、多模态分析和成长建议串成完整闭环。</p>
+          </header>
+          <figure>
+            <a class="architecture-image" href="assets/interview-architecture.webp" data-lightbox data-title="AI Interview · 整体技术架构" data-alt="AI 面试系统整体技术架构：Vue 表现层、API 中间层、FastAPI 服务与算法层、MySQL 和 Chroma 数据层">
+              <img src="assets/interview-architecture.webp" alt="AI 面试整体技术架构图，展示表现层、中间层、服务层、数据层与成果层" width="1920" height="1080" loading="lazy" decoding="async">
+            </a>
+            <figcaption>
+              <ol class="architecture-layers architecture-layers--five">
+                <li><span>01</span><strong>表现层</strong><p>Vue 3、Element Plus 与 ECharts 承载面试操作和结果可视化。</p></li>
+                <li><span>02</span><strong>中间层</strong><p>通过 RESTful API、SSE 与 Axios 连接界面和服务，支持流式反馈。</p></li>
+                <li><span>03</span><strong>服务层</strong><p>FastAPI 协调 NLP、LLM 与 RAG，处理面试、检索与评估任务。</p></li>
+                <li><span>04</span><strong>数据层</strong><p>MySQL 保存业务数据，Chroma 管理岗位、简历与题库向量。</p></li>
+                <li><span>05</span><strong>成果层</strong><p>输出模拟面试、简历优化、成长建议与可视化评估报告。</p></li>
+              </ol>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
     <section class="section demos" id="demos" aria-labelledby="demos-title">
       <div class="section-heading" data-reveal>
-        <p class="eyebrow"><span class="section-number">03</span>WATCH THE DEMOS</p>
+        <p class="eyebrow"><span class="section-number">04</span>WATCH THE DEMOS</p>
         <h2 id="demos-title">不止于截图，<br>看看它们如何工作。</h2>
         <p class="section-intro">保留两段完整演示，从功能设置到真实操作。视频不会自动播放，点击后才开始加载。</p>
       </div>
@@ -215,17 +268,23 @@
     <section class="section honors" id="honors" aria-labelledby="honors-title">
       <div class="honors-heading" data-reveal>
         <div>
-          <p class="eyebrow"><span class="section-number">04</span>EXPERIENCE &amp; RECOGNITION</p>
+          <p class="eyebrow"><span class="section-number">05</span>EXPERIENCE &amp; RECOGNITION</p>
           <h2 id="honors-title">在实践里成长，<br>让作品留下痕迹。</h2>
         </div>
-        <p>竞赛让我学会协作与表达，知识产权则记录将想法变成成果的每一步。以下为部分代表经历，点击证书可查看大图。</p>
+        <p>从课程学习走到团队项目，再从项目走到竞赛与成果登记。这里记录的是过程中的作品、协作和收获，而不只是奖项名称。</p>
+      </div>
+      <div class="honor-metrics" data-reveal>
+        <div><strong>5 项</strong><span>国家级竞赛奖项</span></div>
+        <div><strong>10 项</strong><span>省级及区域赛奖项</span></div>
+        <div><strong>5 项</strong><span>软件著作权</span></div>
+        <div><strong>专业第 1/91</strong><span>2024–2025 学年综合测评</span></div>
       </div>
       <div class="certificate-grid">
         <figure class="certificate-card" data-reveal>
           <a class="certificate-image" href="assets/award-software-cup.webp" data-lightbox data-title="第十五届“中国软件杯”大学生软件设计大赛 · 全国二等奖" data-alt="刘苏城获得第十五届中国软件杯大学生软件设计大赛全国总决赛二等奖的荣誉证书">
             <img src="assets/award-software-cup.webp" alt="中国软件杯全国二等奖证书缩略图" width="1600" height="1132" loading="lazy" decoding="async">
           </a>
-          <figcaption><span>2026 · NATIONAL SECOND PRIZE</span><h3>中国软件杯 · 全国二等奖</h3><p>景区导览服务 AI 数字人</p></figcaption>
+          <figcaption><span>2026 · NATIONAL SECOND PRIZE</span><h3>中国软件杯 · 全国二等奖</h3><p>景区导览服务 AI 数字人 · 团队队长</p></figcaption>
         </figure>
         <figure class="certificate-card" data-reveal>
           <a class="certificate-image" href="assets/award-computer-design.webp" data-lightbox data-title="第十九届中国大学生计算机设计大赛 · 全国三等奖" data-alt="智面领航 AI 模拟面试系统获得第十九届中国大学生计算机设计大赛三等奖的获奖证书">
@@ -234,21 +293,98 @@
           <figcaption><span>2026 · NATIONAL THIRD PRIZE</span><h3>计算机设计大赛 · 全国三等奖</h3><p>智面领航——AI 模拟面试系统</p></figcaption>
         </figure>
         <figure class="certificate-card" data-reveal>
-          <a class="certificate-image" href="assets/software-copyright-steam.webp" data-lightbox data-title="计算机软件著作权 · Steam 信息采集系统 V1.0" data-alt="Steam 信息采集系统 V1.0 计算机软件著作权登记证书，刘苏城为共同著作权人">
-            <img src="assets/software-copyright-steam.webp" alt="Steam 信息采集系统 V1.0 软件著作权证书缩略图" width="1190" height="1610" loading="lazy" decoding="async">
+          <a class="certificate-image" href="assets/award-raicom.webp" data-lightbox data-title="2026 睿抗机器人开发者大赛（RAICOM）· 全国三等奖" data-alt="刘苏城与团队成员获得 2026 睿抗机器人开发者大赛全国总决赛全域安防竞赛项目三等奖的证书">
+            <img src="assets/award-raicom.webp" alt="睿抗机器人开发者大赛全国三等奖证书缩略图" width="1000" height="707" loading="lazy" decoding="async">
           </a>
-          <figcaption><span>2025 · SOFTWARE COPYRIGHT</span><h3>计算机软件著作权</h3><p>Steam 信息采集系统 V1.0 · 共同著作权人</p></figcaption>
+          <figcaption><span>2026 · NATIONAL THIRD PRIZE</span><h3>睿抗机器人开发者大赛 · 全国三等奖</h3><p>全国总决赛全域安防竞赛项目</p></figcaption>
         </figure>
       </div>
-      <div class="honor-foot" data-reveal>
-        <p>也在持续积累专业学习与校园实践经历。</p>
-        <ul><li>2024–2025 学年特等奖学金</li><li>2024–2025 学年三好学生</li><li>信工学院双创中心副部长</li></ul>
+
+      <div class="experience-layout">
+        <div class="experience-timeline" data-reveal>
+          <p class="experience-kicker">NATIONAL COMPETITIONS</p>
+          <h3>国家级竞赛经历</h3>
+          <ol class="timeline">
+            <li><time datetime="2026">2026</time><div><h4>中国软件杯 · 全国二等奖</h4><p>景区导览服务 AI 数字人，担任团队队长，在需求、协作与答辩中推进项目落地。</p></div></li>
+            <li><time datetime="2026">2026</time><div><h4>中国大学生计算机设计大赛 · 全国三等奖</h4><p>“智面领航——基于 RAG 与多模态评分的 AI 模拟面试系统”团队成员。</p></div></li>
+            <li><time datetime="2026">2026</time><div><h4>睿抗机器人开发者大赛 · 全国三等奖</h4><p>全国总决赛全域安防竞赛项目团队成员。</p></div></li>
+            <li><time datetime="2025">2025</time><div><h4>iCAN 大学生创新创业大赛 AI 挑战赛 · 全国三等奖</h4><p>“知界·多模态智能辅助备课系统”团队成员。</p></div></li>
+            <li><time datetime="2025">2025</time><div><h4>中国大学生服务外包创新创业大赛 · 全国三等奖</h4><p>全国赛企业命题类团队成员。</p></div></li>
+          </ol>
+        </div>
+        <aside class="practice-card" data-reveal aria-labelledby="practice-title">
+          <p class="experience-kicker">LEARNING &amp; CAMPUS</p>
+          <h3 id="practice-title">学习与校园实践</h3>
+          <dl>
+            <div><dt>综合测评</dt><dd>2024–2025 学年专业第 1/91</dd></div>
+            <div><dt>学年荣誉</dt><dd>特等奖学金、三好学生、科技活动奖</dd></div>
+            <div><dt>技能证书</dt><dd>NCRE Python 语言程序设计优秀、CET-4</dd></div>
+            <div><dt>学生工作</dt><dd>信工学院大学生创新创业中心副部长<br><span>2025.09–2026.06</span></dd></div>
+            <div><dt>集体荣誉</dt><dd>人工智能 2024-1 班获“先进班集体”称号</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <details class="more-experience" data-reveal>
+        <summary>查看更多省级、校级与院级经历</summary>
+        <div class="more-award-columns">
+          <div>
+            <h3>省级及区域赛</h3>
+            <ul>
+              <li><strong>计算机设计大赛江西省一等奖</strong><span>AI 模拟面试系统，2026</span></li>
+              <li><strong>计算机设计大赛江西省二等奖</strong><span>高速公路事故持续时间预测系统，2026</span></li>
+              <li><strong>睿抗机器人开发者大赛江西赛区二等奖</strong><span>全域安防竞赛，2026</span></li>
+              <li><strong>蓝桥杯江西赛区三等奖</strong><span>C/C++ 程序设计大学 B 组，2025</span></li>
+              <li><strong>全球校园人工智能算法精英大赛省级三等奖</strong><span>赛区制与赛马制，2025</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>校级与院级</h3>
+            <ul>
+              <li><strong>“双基”程序设计竞赛优秀奖</strong><span>2024、2025</span></li>
+              <li><strong>“双基竞赛”大学生物理创新竞赛二等奖</strong><span>2025</span></li>
+              <li><strong>软件设计大赛三等奖</strong><span>Steam 平台游戏数据深度剖析，2025</span></li>
+              <li><strong>大学生创新大赛院赛二等奖</strong><span>AI 赋能的无人机桥梁巡检与测绘系统，2025</span></li>
+              <li><strong>“挑战杯”大学生创业计划竞赛院赛二等奖</strong><span>2025</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section intellectual" id="copyright" aria-labelledby="copyright-title">
+      <div class="projects-heading" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="section-number">06</span>INTELLECTUAL PROPERTY</p>
+          <h2 id="copyright-title">把作品，<br>沉淀为可确认的成果。</h2>
+        </div>
+        <p>软件著作权登记覆盖数据采集、航空数据、班级与校园管理等方向。以下 5 项均为共同著作权人，登记信息按证书原件整理。</p>
+      </div>
+      <div class="ip-layout">
+        <figure class="ip-certificate" data-reveal>
+          <a href="assets/software-copyright-steam.webp" data-lightbox data-title="计算机软件著作权 · Steam 信息采集系统 V1.0" data-alt="Steam 信息采集系统 V1.0 计算机软件著作权登记证书，刘苏城为共同著作权人">
+            <img src="assets/software-copyright-steam.webp" alt="Steam 信息采集系统 V1.0 软件著作权登记证书" width="1190" height="1610" loading="lazy" decoding="async">
+          </a>
+          <figcaption>代表证书 · 点击图片查看大图</figcaption>
+        </figure>
+        <div class="ip-content" data-reveal>
+          <p class="experience-kicker">SOFTWARE COPYRIGHTS / 2025</p>
+          <h3>计算机软件著作权登记</h3>
+          <ul class="ip-list">
+            <li><div><strong>Steam 信息采集系统 V1.0</strong><span>数据采集与信息管理</span></div><code>2025SR1622078</code></li>
+            <li><div><strong>航迹视界——航空数据分析系统 V1.0</strong><span>航空数据分析</span></div><code>2025SR1621346</code></li>
+            <li><div><strong>学信云阁——班级学生信息管理系统 V1.0</strong><span>班级信息协作与管理</span></div><code>2025SR1617686</code></li>
+            <li><div><strong>菁社云枢——校园社团管理系统 V1.0</strong><span>校园社团管理</span></div><code>2025SR1839689</code></li>
+            <li><div><strong>墨韵寻踪——华交校园管理系统 V1.0</strong><span>校园场景与信息服务</span></div><code>2025SR2059119</code></li>
+          </ul>
+          <p class="ip-note">从一次课程练习到可登记的系统成果，关注的不只是功能完成，也包括数据、流程与实际使用场景是否完整。</p>
+        </div>
       </div>
     </section>
 
     <section class="section capabilities" aria-labelledby="capabilities-title">
       <div class="section-heading" data-reveal>
-        <p class="eyebrow"><span class="section-number">05</span>WHAT I DO</p>
+        <p class="eyebrow"><span class="section-number">07</span>WHAT I DO</p>
         <h2 id="capabilities-title">从问题出发，<br>在细节里落地。</h2>
       </div>
       <div class="capability-grid">
@@ -260,7 +396,7 @@
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-inner" data-reveal>
-        <p class="eyebrow eyebrow--light"><span class="section-number">06</span>LET'S CONNECT</p>
+        <p class="eyebrow eyebrow--light"><span class="section-number">08</span>LET'S CONNECT</p>
         <h2 id="contact-title">很高兴，<br>在这里遇见你<span class="contact-dot">。</span></h2>
         <p>无论是项目交流、技术讨论，还是想认识一个新朋友，都欢迎与我联系。</p>
         <div class="contact-links">
@@ -288,8 +424,9 @@
         <a href="#home" data-nav="home"><span>01</span>首页</a>
         <a href="#about" data-nav="about"><span>02</span>关于</a>
         <a href="#projects" data-nav="projects"><span>03</span>项目</a>
-        <a href="#honors" data-nav="honors"><span>04</span>经历</a>
-        <a href="#contact" data-nav="contact"><span>05</span>联系</a>
+        <a href="#architecture" data-nav="architecture"><span>04</span>架构</a>
+        <a href="#honors" data-nav="honors"><span>05</span>经历</a>
+        <a href="#contact" data-nav="contact"><span>06</span>联系</a>
       </nav>
       <a class="menu-github" href="https://github.com/liusucheng0213" target="_blank" rel="noopener noreferrer">GitHub @liusucheng0213 <span aria-hidden="true">↗</span></a>
     </div>

@@ -1,6 +1,6 @@
 # 刘苏城 Sucheng Liu · Personal Homepage
 
-刘苏城（Sucheng Liu）的个人主页，包含基本信息、个人照片、精选项目、架构图、演示视频与代表荣誉。
+刘苏城（Sucheng Liu）的个人主页，包含基本信息、个人照片、精选项目、整体架构与分层说明、演示视频，以及竞赛、软件著作权、学习和校园实践经历。
 
 - 在线地址：[liusucheng0213.github.io](https://liusucheng0213.github.io/)
 - 项目总库：[liusucheng](https://github.com/liusucheng0213/liusucheng)
