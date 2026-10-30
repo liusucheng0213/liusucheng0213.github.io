@@ -21,7 +21,7 @@ python -m http.server 8765 --bind 127.0.0.1
 ```text
 index.html          页面内容与语义结构
 styles.css         视觉样式、响应式布局和动效
-script.js          导航、图片预览、栏目高亮和媒体懒加载
+script.js          导航、图片预览、证书翻页、栏目高亮和媒体懒加载
 assets/            本地照片、项目图、证书、视频与中文字幕
 .nojekyll          GitHub Pages 静态发布配置
 ```

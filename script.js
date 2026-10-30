@@ -147,3 +147,29 @@ if (!supportsLazyMedia && "IntersectionObserver" in window) {
     mediaObserver.observe(video);
   });
 }
+
+document.querySelectorAll("[data-copyright-viewer]").forEach((viewer) => {
+  const slides = Array.from(viewer.querySelectorAll("[data-copyright-slide]"));
+  const controls = viewer.querySelector("[data-copyright-controls]");
+  const previousButton = viewer.querySelector("[data-copyright-prev]");
+  const nextButton = viewer.querySelector("[data-copyright-next]");
+  const status = viewer.querySelector("[data-copyright-status]");
+
+  if (!slides.length || !controls || !previousButton || !nextButton || !status) return;
+
+  let currentIndex = 0;
+  const showSlide = (index) => {
+    currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+    slides.forEach((slide, slideIndex) => {
+      slide.hidden = slideIndex !== currentIndex;
+    });
+    previousButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === slides.length - 1;
+    status.textContent = `第 ${currentIndex + 1} / ${slides.length} 张：${slides[currentIndex].dataset.name}`;
+  };
+
+  previousButton.addEventListener("click", () => showSlide(currentIndex - 1));
+  nextButton.addEventListener("click", () => showSlide(currentIndex + 1));
+  controls.hidden = false;
+  showSlide(0);
+});
